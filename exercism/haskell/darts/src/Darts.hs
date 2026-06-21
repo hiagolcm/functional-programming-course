@@ -1,11 +1,9 @@
 module Darts (score) where
 
 score :: Float -> Float -> Int
-score x y = if dist > 10 
-    then 0
-    else if dist > 5
-        then 1
-        else if dist > 1
-            then 5
-            else 10
-    where dist = sqrt (x ^ 2 + y ^ 2) :: FLoat
+score x y 
+    | dist > 10 = 0
+    | dist > 5 = 1
+    | dist > 1 = 5
+    | otherwise = 10
+    where dist = sqrt (x * x + y * y)
